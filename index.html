@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hypernova Code Contact</title>
+    <!-- Link to the external stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="container">
+        <!-- Logo and branding -->
+        <img src="logo.png" alt="Hypernova Code logo" class="logo" />
+        <!-- Heading and description -->
+        <h1>Stay Connected</h1>
+        <p>Share your email or phone number along with your name to get updates from Hypernova&nbsp;Code.</p>
+
+        <!-- Contact form -->
+        <form id="contact-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required />
+
+            <label for="contact">Email or Phone:</label>
+            <input type="text" id="contact" name="contact" placeholder="Your email or phone number" required />
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <!-- JavaScript to post data to backend and handle responses -->
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value.trim();
+            const contact = document.getElementById('contact').value.trim();
+            // Send data to the backend API endpoint
+            fetch('/submit', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name: name, contact: contact })
+            }).then(function (response) {
+                if (response.ok) {
+                    alert('Thank you! Your information has been sent successfully.');
+                    document.getElementById('contact-form').reset();
+                } else {
+                    response.json().then(function (data) {
+                        alert('Error sending data: ' + (data.message || 'Unknown error'));
+                    });
+                }
+            }).catch(function (error) {
+                alert('Network error: ' + error);
+            });
+        });
+    </script>
+</body>
+</html>

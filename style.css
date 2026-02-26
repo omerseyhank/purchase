@@ -1,0 +1,99 @@
+/*
+ * Stylesheet for the Hypernova Code contact form with automatic submission.
+ *
+ * The dark theme matches the supplied logo.  Form elements are styled as
+ * a card with rounded corners and a gradient button.  Adjust colors as needed
+ * to fit your branding.
+ */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #012c3e;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    background-color: rgba(1, 44, 62, 0.85);
+    border-radius: 8px;
+    padding: 40px 30px;
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+}
+
+.logo {
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+
+h1 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #d6f5f7;
+}
+
+p {
+    font-size: 0.95rem;
+    margin-bottom: 30px;
+    color: #b0dce6;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+label {
+    text-align: left;
+    font-size: 0.9rem;
+    color: #a8cfdc;
+}
+
+input {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #01384e;
+    color: #ffffff;
+    font-size: 1rem;
+}
+
+input::placeholder {
+    color: #6faac3;
+}
+
+input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #16c7b9;
+}
+
+button {
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    background: linear-gradient(90deg, #16c7b9, #0ccfa3);
+    color: #012c3e;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(90deg, #0ccfa3, #16c7b9);
+}
